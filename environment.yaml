@@ -1,0 +1,8 @@
+name: llm-cookbook
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - openai
+  - pandas
