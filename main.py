@@ -3,9 +3,9 @@ import pandas as pd
 
 
 # load data and create prompt
-instruction = "Summarize the following text: {text}"
 df = pd.read_csv('data/data.txt', sep='\t', encoding='utf-8')
 text = ''.join(df.iloc[:, 2])
+instruction = "Summarize the following text: {text}"
 prompt = instruction.format(text=text)
 
 # Point to the local server
@@ -18,7 +18,7 @@ history = [
 
 while True:
     completion = client.chat.completions.create(
-        model="lmstudio-community/gemma-2-9b-it-GGUF",
+        model="bartowski/Gemma-2-9B-It-SPPO-Iter3-GGUF",
         messages=history,
         temperature=0.7,
         stream=True,
